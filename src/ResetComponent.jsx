@@ -11,13 +11,14 @@ class ResetComponent extends React.Component {
   handleClick (e) {
     e.preventDefault()
 
-    console.log('resetting apollo...')
+    console.log('reset')
+
     this.props.client.resetStore()
   }
 
   render () {
     return (
-      <a href="/reset" onClick={this.handleClick}>reset apollo</a>
+      <a href="/reset" onClick={this.handleClick}>reset Apollo</a>
     )
   }
 }

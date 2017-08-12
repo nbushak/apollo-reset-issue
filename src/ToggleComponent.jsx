@@ -12,10 +12,14 @@ export default class ResetComponent extends React.Component {
   }
 
   handleClick (e) {
+    const {visible} = this.state
+
     e.preventDefault()
 
+    console.log(visible ? 'hide' : 'show')
+
     this.setState({
-      visible: !this.state.visible,
+      visible: !visible,
     })
   }
 

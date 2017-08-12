@@ -3,7 +3,8 @@ import {graphql, gql} from 'react-apollo'
 
 class DataComponent extends React.Component {
   render () {
-    const {loading, error, allTweets} = this.props.data
+    console.log(this.props.data)
+    const {loading, error, allMessages} = this.props.data
 
     if (loading) {
       return <div>Loading...</div>
@@ -16,7 +17,7 @@ class DataComponent extends React.Component {
 
     return (
       <div>
-        {allTweets.map((tweet) => <div key={tweet.id}>{tweet.text}</div>)}
+        {allMessages.map((mess) => <div key={mess.id}>{mess.text}</div>)}
       </div>
     )
   }
@@ -24,7 +25,7 @@ class DataComponent extends React.Component {
 
 const DataQuery = gql`
 query DataQuery {
-  allTweets {
+  allMessages {
     id,
     text,
   }
